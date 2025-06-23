@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array in Table</title>
+</head>
+<body>
+    <div id="wrapper"></div>
+</body>
+</html>
+
+<script>
+
+let wrapper = document.getElementById("wrapper");
+
+let navbar   = ["Id","Name","Class","City",,"Roll No","Contact No"];
+
+let Students = [
+        ["1","Shahid", "CS", "Jaranwala", "0165", "+923387412"],
+        ["2","Zain"  , "IT", "Jaranwala", "0125", "+923387412"],
+        ["3","Ali"   , "Math", "Faisalabad", "0166", "+923457891"],
+        ["4","Fahad" , "Science", "Faisalabad", "0199", "+923457891"]
+];
+
+
+let table_1 = document.createElement("table");
+
+table_1.style.width  = "70%";
+table_1.style.height = "6vh";
+table_1.style.fontSize = "20px";
+table_1.style.margin = "auto";
+
+let tr = document.createElement("tr");
+
+tr.style.background = "dodgerblue";
+tr.style.color = "white";
+tr.style.fontFamily = "arial";
+
+navbar.forEach(nav =>{
+    let th = document.createElement("th");
+    th.innerText = nav;
+
+    tr.appendChild(th);
+});
+
+table_1.appendChild(tr);
+
+
+   Students.forEach(student =>{
+
+    let tr_2 = document.createElement("tr");
+
+    student.forEach(data =>{
+
+        let td_2 = document.createElement("td");
+
+        td_2.innerText = data;
+        td_2.style.background = "lavender";
+        td_2.style.textAlign = "center";
+        td_2.style.fontFamily = "verdana";
+        td_2.style.padding = "10px";
+
+         tr_2.appendChild(td_2);
+    })
+
+    table_1.appendChild(tr_2);
+})
+
+
+wrapper.appendChild(table_1);
+
+
+</script>
